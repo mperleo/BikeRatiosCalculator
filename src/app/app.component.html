@@ -1,0 +1,188 @@
+<main class="main">
+  <div class="content">
+    <header class="mt-auto row">
+      <div class="container">
+        <div
+          class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start"
+        >
+          <img class="bi me-2" width="50" height="50" src="assets/cassette.png" />
+          <span class="fs-4">
+            <span class="helvetica-title">Bike Ratios </span>
+            <span class="silkscreen-title">Grapher</span>
+          </span>
+        </div>
+      </div>
+    </header>
+
+    <div class="silkscreen" role="main">
+      <div class="row">
+        <div class="col-md-6 col-sm-12">
+          <div class="section-white section-sm text-bg-light">
+            <div class="card-header mb-3">
+              {{ "formCardHeader" | translations : lang }}
+            </div>
+            <div class="card-body row">
+              <div class="col-md-6">
+                <mat-form-field  class="w-100">
+                  <mat-label>{{
+                    "chainringTeethLabel" | translations : lang
+                  }}</mat-label>
+                  <input
+                    matInput
+                    placeholder="50-34"
+                    [(ngModel)]="chainrings"
+                    required
+                  />
+                </mat-form-field>
+              </div>
+
+              <div class="col-md-6">
+                <mat-form-field  class="w-100">
+                  <mat-label>{{
+                    "sprocketTeethLabel" | translations : lang
+                  }}</mat-label>
+                  <input
+                    matInput
+                    placeholder="11-12-13-14-15-17-19-22-25-27-30-32"
+                    [(ngModel)]="sprokets"
+                    required
+                  />
+                </mat-form-field>
+              </div>
+
+              <div class="col-md-12">
+                <button
+                  type="button"
+                  class="btn btn-dark"
+                  (click)="onCalculateRatios()"
+                >
+                  {{ "calculateButton" | translations : lang }}
+                </button>
+                <button type="button" class="btn btn-light" (click)="onReset()">
+                  {{ "deleteFormButton" | translations : lang }}
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-sm-12">
+          <div class="section-white section-sm">
+            <div class="card-header mb-3">
+              {{ "bikeDataCardHeader" | translations : lang }}
+            </div>
+            <div class="card-body row">
+              <div class="col-md-3">
+                <mat-form-field  class="w-100">
+                  <mat-label>{{
+                    "wheelSizeLabel" | translations : lang
+                  }}</mat-label>
+                  <input matInput placeholder="700" [(ngModel)]="diameter" />
+                </mat-form-field>
+              </div>
+
+              <div class="col-md-3">
+                <mat-form-field  class="w-100">
+                  <mat-label>{{
+                    "cadenceLabel" | translations : lang
+                  }}</mat-label>
+                  <input matInput placeholder="60" [(ngModel)]="cadence" />
+                </mat-form-field>
+              </div>
+
+              <div class="col-md-6">
+                <mat-form-field  class="w-100">
+                  <mat-label>{{ "unitLabel" | translations : lang }}</mat-label>
+                  <mat-select [(ngModel)]="unit">
+                    <mat-option selected value="mm">mm</mat-option>
+                    <mat-option value="inch">inch</mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+
+  
+            </div>
+          </div>
+        </div>
+
+        <div class="col-6">
+          <div class="section-dark section-bg text-bg-dark">
+            <div class="card-header mb-3">
+              {{ "tableCardHeader" | translations : lang }}
+            </div>
+            <div class="card-body silkscreen">
+              <table class="table table-dark table-striped-columns">
+                <thead>
+                  <tr>
+                    <th scope="col">
+                      {{ "chainringTeethLabel" | translations : lang }}
+                    </th>
+                    <th scope="col">
+                      {{ "sprocketTeethLabel" | translations : lang }}
+                    </th>
+                    <th scope="col">
+                      {{ "speedLabel" | translations : lang }}
+                    </th>
+                    <th scope="col">
+                      {{ "ratioLabel" | translations : lang }}
+                    </th>
+                  </tr>
+                </thead>
+                <tbody class="helvetica">
+                  <tr *ngFor="let gear of rangeCalcs">
+                    <td>{{ gear.chainringTeeth }}</td>
+                    <td>{{ gear.sprocketTeeth }}</td>
+                    <td>{{ gear.speedRegistry.speedCalculated }}</td>
+                    <td>{{ gear.ratio }}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-6">
+          <div class="section-dark section-bg text-bg-light">
+            <div class="card-header mb-3">
+              {{ "graphCardHeader" | translations : lang }}
+            </div>
+            <div class="card-body silkscreen">
+              <div class="chart-container">
+                <canvas id="ratioChart">{{ chartConfig }}</canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer row">
+      <div class="col-md-10 col-sm-12 pt-2">
+        <p class=" text-white">
+          <span class="helvetica-title">{{ "credits" | translations : lang }} </span>
+          <a
+            class="text-white"
+            href="https://mperleo.github.io/MykiDashboard/"
+            role="button"
+            >MykiStudio.</a
+          >
+          <a
+            class="mx-3 text-white silkscreen-title"
+            href="https://github.com/mperleo"
+            role="button"
+          >
+            <i class="fab fa-github"></i>
+          </a>
+        </p>
+      </div>
+      <div class="col-md-2 col-sm-12 pt-2">
+        <p class="text-white">
+          <span [class]="isLangSelected('es')" (click)="onChangeLang('es')">español</span>
+          <span [class]="isLangSelected('en')" (click)="onChangeLang('en')">english</span>
+        </p>
+      </div>
+    </footer>
+  </div>
+</main>
+
+<router-outlet />
