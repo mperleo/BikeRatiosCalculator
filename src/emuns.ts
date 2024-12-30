@@ -9,3 +9,5 @@ export const enum LANGUAJES {
   ES = 'es',
   EN = 'en'
 }
+
+export const COLOR_PALETTE: string[] = ['blue', 'limegreen', 'red'];

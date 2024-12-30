@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { LANGUAJES, PI, UNITS } from '../emuns';
+import { COLOR_PALETTE, LANGUAJES, PI, UNITS } from '../emuns';
 import { TranslationsModule } from '../translations/translations.module';
 import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
@@ -9,10 +9,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { Chart } from 'chart.js/auto';
-import { COLOR_PALETTE } from './app.component.config';
-import { RatioData } from '../interfaces/RatioData';
-import { SpeedChartData } from '../interfaces/SpeedChartData';
-import { SpeedRegistry } from '../interfaces/SpeedRegistry';
+import { RatioData, SpeedChartData, SpeedRegistry } from '../interfaces';
 
 @Component({
   selector: 'app-root',
