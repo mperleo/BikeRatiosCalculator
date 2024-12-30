@@ -3,12 +3,10 @@
     <header class="mt-auto row">
       <div class="container">
         <div
-          class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start"
+          class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start fs-4"
         >
-          <span class="fs-4">
-            <span class="helvetica-title">Bike Ratios </span>
-            <span class="silkscreen-title">Grapher</span>
-          </span>
+          <span class="helvetica-title">Bike Ratios </span>
+          <span class="silkscreen-title">Grapher</span>
         </div>
       </div>
     </header>
@@ -22,7 +20,7 @@
             </div>
             <div class="card-body row">
               <div class="col-md-6">
-                <mat-form-field  class="w-100">
+                <mat-form-field class="w-100">
                   <mat-label>{{
                     "chainringTeethLabel" | translations : lang
                   }}</mat-label>
@@ -36,7 +34,7 @@
               </div>
 
               <div class="col-md-6">
-                <mat-form-field  class="w-100">
+                <mat-form-field class="w-100">
                   <mat-label>{{
                     "sprocketTeethLabel" | translations : lang
                   }}</mat-label>
@@ -72,7 +70,7 @@
             </div>
             <div class="card-body row">
               <div class="col-md-3">
-                <mat-form-field  class="w-100">
+                <mat-form-field class="w-100">
                   <mat-label>{{
                     "wheelSizeLabel" | translations : lang
                   }}</mat-label>
@@ -81,7 +79,7 @@
               </div>
 
               <div class="col-md-3">
-                <mat-form-field  class="w-100">
+                <mat-form-field class="w-100">
                   <mat-label>{{
                     "cadenceLabel" | translations : lang
                   }}</mat-label>
@@ -90,7 +88,7 @@
               </div>
 
               <div class="col-md-6">
-                <mat-form-field  class="w-100">
+                <mat-form-field class="w-100">
                   <mat-label>{{ "unitLabel" | translations : lang }}</mat-label>
                   <mat-select [(ngModel)]="unit">
                     <mat-option selected value="mm">mm</mat-option>
@@ -98,8 +96,6 @@
                   </mat-select>
                 </mat-form-field>
               </div>
-
-  
             </div>
           </div>
         </div>
@@ -157,8 +153,10 @@
 
     <footer class="footer row">
       <div class="col-md-10 col-sm-12 pt-2">
-        <p class=" text-white">
-          <span class="helvetica-title">{{ "credits" | translations : lang }} </span>
+        <p class="text-white">
+          <span class="helvetica-title"
+            >{{ "credits" | translations : lang }}
+          </span>
           <a
             class="text-white"
             href="https://mperleo.github.io/MykiDashboard/"
@@ -176,8 +174,12 @@
       </div>
       <div class="col-md-2 col-sm-12 pt-2">
         <p class="text-white">
-          <span [class]="isLangSelected('es')" (click)="onChangeLang('es')">español</span>
-          <span [class]="isLangSelected('en')" (click)="onChangeLang('en')">english</span>
+          <span [class]="isLangSelected('es')" (click)="onChangeLang('es')"
+            >español</span
+          >
+          <span [class]="isLangSelected('en')" (click)="onChangeLang('en')"
+            >english</span
+          >
         </p>
       </div>
     </footer>
