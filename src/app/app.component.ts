@@ -1,18 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { LANGUAJES, PI, UNITS } from '../emuns';
-import { SpeedRegistry } from '../interfaces/SpeedRegistry';
 import { TranslationsModule } from '../translations/translations.module';
 import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
 import { FormsModule } from '@angular/forms';
-import { RatioData } from '../interfaces/RatioData';
 import { CommonModule } from '@angular/common';
 import { Chart } from 'chart.js/auto';
-import { SpeedChartData } from '../interfaces/SpeedChartData';
 import { COLOR_PALETTE } from './app.component.config';
+import { RatioData } from '../interfaces/RatioData';
+import { SpeedChartData } from '../interfaces/SpeedChartData';
+import { SpeedRegistry } from '../interfaces/SpeedRegistry';
 
 @Component({
   selector: 'app-root',
