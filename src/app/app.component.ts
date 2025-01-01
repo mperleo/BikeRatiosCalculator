@@ -2,10 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { COLOR_PALETTE, LANGUAJES, PI, UNITS } from '../emuns';
 import { TranslationsModule } from '../translations/translations.module';
-import { MatSelectModule } from '@angular/material/select';
-import { MatInputModule } from '@angular/material/input';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatButtonModule } from '@angular/material/button';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { Chart } from 'chart.js/auto';
@@ -18,10 +14,6 @@ import { RatioData, SpeedChartData, SpeedRegistry } from '../interfaces';
     CommonModule,
     RouterOutlet,
     FormsModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatSelectModule,
-    MatButtonModule,
     TranslationsModule,
   ],
   templateUrl: './app.component.html',

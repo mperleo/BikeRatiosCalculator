@@ -20,31 +20,27 @@
             </div>
             <div class="card-body row">
               <div class="col-md-6">
-                <mat-form-field class="w-100">
-                  <mat-label>{{
+                  <label>{{
                     "chainringTeethLabel" | translations : lang
-                  }}</mat-label>
+                  }}</label>
                   <input
-                    matInput
                     placeholder="50-34"
                     [(ngModel)]="chainrings"
+                    [ngModelOptions]="{standalone: true}"
                     required
                   />
-                </mat-form-field>
               </div>
 
               <div class="col-md-6">
-                <mat-form-field class="w-100">
-                  <mat-label>{{
+                  <label>{{
                     "sprocketTeethLabel" | translations : lang
-                  }}</mat-label>
+                  }}</label>
                   <input
-                    matInput
                     placeholder="11-12-13-14-15-17-19-22-25-27-30-32"
                     [(ngModel)]="sprokets"
+                    [ngModelOptions]="{standalone: true}"
                     required
                   />
-                </mat-form-field>
               </div>
 
               <div class="col-md-12">
@@ -70,31 +66,27 @@
             </div>
             <div class="card-body row">
               <div class="col-md-3">
-                <mat-form-field class="w-100">
-                  <mat-label>{{
+                <form class="w-100">
+                  <label>{{
                     "wheelSizeLabel" | translations : lang
-                  }}</mat-label>
-                  <input matInput placeholder="700" [(ngModel)]="diameter" />
-                </mat-form-field>
+                  }}</label>
+                  <input placeholder="700" [(ngModel)]="diameter" [ngModelOptions]="{standalone: true}"/>
+                </form>
               </div>
 
               <div class="col-md-3">
-                <mat-form-field class="w-100">
-                  <mat-label>{{
+                  <label>{{
                     "cadenceLabel" | translations : lang
-                  }}</mat-label>
-                  <input matInput placeholder="60" [(ngModel)]="cadence" />
-                </mat-form-field>
+                  }}</label>
+                  <input placeholder="60" [(ngModel)]="cadence" [ngModelOptions]="{standalone: true}"/>
               </div>
 
               <div class="col-md-6">
-                <mat-form-field class="w-100">
-                  <mat-label>{{ "unitLabel" | translations : lang }}</mat-label>
-                  <mat-select [(ngModel)]="unit">
-                    <mat-option selected value="mm">mm</mat-option>
-                    <mat-option value="inch">inch</mat-option>
-                  </mat-select>
-                </mat-form-field>
+                  <label>{{ "unitLabel" | translations : lang }}</label>
+                  <select [(ngModel)]="unit" [ngModelOptions]="{standalone: true}">
+                    <option selected value="mm">mm</option>
+                    <option value="inch">inch</option>
+                  </select>
               </div>
             </div>
           </div>
